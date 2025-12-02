@@ -1,58 +1,44 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-// ¼ÇµÃ¸øÄãµÄ½ÇÉ«Ìí¼Ó Rigidbody2D ×é¼ş£¬²¢½« Gravity Scale ÉèÖÃºÏÊÊµÄÖµ
-// ÎªÁË·ÀÖ¹½ÇÉ«ÔÚĞ±ÆÂÏÂ»¬£¬¿ÉÒÔ½« Rigidbody2D µÄ Collision Detection ÉèÎª Continuous
 [RequireComponent(typeof(Rigidbody2D))]
 public class Move : MonoBehaviour
 {
-    [Header("ÒÆ¶¯²ÎÊı")]
-    [Tooltip("ÒÆ¶¯ËÙ¶È")]
+    [Header("ç§»åŠ¨å‚æ•°")]
     public float moveSpeed = 8f;
 
     private Rigidbody2D rb;
     private float horizontalInput;
     private bool isFacingRight = true;
 
-    void Awake()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.interpolation = RigidbodyInterpolation2D.Interpolate; // ä½¿ç‰©ç†æ›´å¹³æ»‘
     }
 
-    void Update()
+    private void Update()
     {
-        // 1. »ñÈ¡ÊäÈë
-        // Ê¹ÓÃ GetAxisRaw ¶ø²»ÊÇ GetAxis£¬¿ÉÒÔ»ñµÃ -1, 0, 1 µÄË²Ê±Öµ
-        // ´Ó¶øÊµÏÖ¡°°´ÏÂÁ¢¿Ì×ß£¬ËÉ¿ªÁ¢¿ÌÍ£¡±µÄÓ²ÊÖ¸Ğ
+        // è·å–è¾“å…¥
         horizontalInput = Input.GetAxisRaw("Horizontal");
 
-        // 2. ´¦ÀíÍ¼Ïñ·­×ª
-        // Ö»ÓĞµ±ÓĞÊäÈëÇÒ·½ÏòÓëµ±Ç°³¯Ïò²»Ò»ÖÂÊ±²Å·­×ª
+        // ç¿»è½¬
         if (horizontalInput > 0 && !isFacingRight)
-        {
             Flip();
-        }
         else if (horizontalInput < 0 && isFacingRight)
-        {
             Flip();
-        }
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        // 3. Ö´ĞĞÎïÀíÒÆ¶¯
-        // ±£ÁôÔ­ÓĞµÄ Y ÖáËÙ¶È£¨ÈçÖØÁ¦ÏÂÂä£©£¬Ö»ĞŞ¸Ä X Öá
-        // Ö±½ÓĞŞ¸Ä velocity ±È AddForce ¸üÊÊºÏ½âÃÜÓÎÏ·µÄ¾«È·¿ØÖÆ
+        // è®©ç§»åŠ¨éå¸¸ç¨³å®šï¼Œä¸æŠ–åŠ¨
         rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
     }
 
-    // ·­×ªÂß¼­
     void Flip()
     {
         isFacingRight = !isFacingRight;
-        Vector3 localScale = transform.localScale;
-        localScale.x *= -1f; // ½« X ÖáËõ·ÅÈ¡·´
-        transform.localScale = localScale;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 }
