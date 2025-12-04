@@ -1,7 +1,6 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-// 建议也加上这个，防止忘记加 Animator 组件
 [RequireComponent(typeof(Animator))]
 public class Move : MonoBehaviour
 {
@@ -14,8 +13,12 @@ public class Move : MonoBehaviour
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
 
+    // 二段跳相关
+    public int maxJumpCount = 2; // 可以跳几段
+    private int jumpCount = 0;
+
     private Rigidbody2D rb;
-    private Animator anim; // [新增 1] 定义 Animator 变量
+    private Animator anim;
     private float horizontalInput;
     private bool isFacingRight = true;
     private bool isGrounded;
@@ -23,7 +26,7 @@ public class Move : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>(); // [新增 2] 获取 Animator 组件
+        anim = GetComponent<Animator>();
         rb.interpolation = RigidbodyInterpolation2D.Interpolate;
     }
 
@@ -32,25 +35,23 @@ public class Move : MonoBehaviour
         // 1. 地面检测
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-        // 2. 获取移动输入
+        // ★ 贴地后重置跳跃次数
+        if (isGrounded)
+            jumpCount = 0;
+
+        // 2. 获取移动
         horizontalInput = Input.GetAxisRaw("Horizontal");
 
-        // [新增 3] 动画控制逻辑
-        // 只要输入不为 0 (代表按下了左或右)，就是跑步状态
-        if (horizontalInput != 0)
-        {
-            anim.SetBool("IsRun", true);
-        }
-        else
-        {
-            anim.SetBool("IsRun", false);
-        }
+        anim.SetBool("IsRun", horizontalInput != 0);
 
-        // 3. 跳跃输入
-        if (Input.GetButtonDown("Jump") && isGrounded)
+        // 3. 跳跃
+        if (Input.GetButtonDown("Jump") && jumpCount < maxJumpCount)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            // 如果你有跳跃动画，可以在这里加: anim.SetTrigger("Jump");
+            jumpCount++;
+
+            // 如果你有跳跃动画，可以加
+            // anim.SetTrigger("Jump");
         }
 
         // 4. 翻转角色
@@ -62,7 +63,6 @@ public class Move : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // 5. 物理移动
         rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
     }
 
