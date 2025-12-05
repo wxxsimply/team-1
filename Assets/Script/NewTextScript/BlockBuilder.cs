@@ -4,42 +4,37 @@ using UnityEngine;
 
 public class BlockBuilder : MonoBehaviour
 {
+    [Header("引用")]
+    [Tooltip("请把挂着 PlayerDirectionalDash 脚本的物体拖进来")]
+    public PlayerDirectionalDash dashScript; // 新增：引用冲刺脚本
+    // public PlayerMovement playerMovementScript; // (保留你之前的角色移动脚本引用)
+
     [Header("设置")]
-    [Tooltip("拖入场景中那个半透明的虚影对象")]
     public GameObject previewObject;
-
-    [Tooltip("拖入要生成的实体长方形 Prefab")]
     public GameObject blockPrefab;
-
-    [Tooltip("旋转速度")]
     public float rotateSpeed = 100f;
 
-    // 内部状态
-    private bool isBuilding = false; // 是否处于建造模式
+    private bool isBuilding = false;
 
     void Start()
     {
-        // 游戏开始确保虚影是隐藏的
-        if (previewObject != null)
-            previewObject.SetActive(false);
+        TurnOff(); // 游戏开始时确保关闭
     }
 
     void Update()
     {
-        // 1. 切换模式：按下 '2' 键
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            isBuilding = !isBuilding;
-
-            if (previewObject != null)
+            if (!isBuilding)
             {
-                previewObject.SetActive(isBuilding);
-                // 可选：每次打开时重置角度
-                // previewObject.transform.rotation = Quaternion.identity; 
+                TurnOn();
+            }
+            else
+            {
+                TurnOff();
             }
         }
 
-        // 如果处于建造模式，执行跟随、旋转和生成
         if (isBuilding && previewObject != null)
         {
             FollowMouse();
@@ -48,45 +43,52 @@ public class BlockBuilder : MonoBehaviour
         }
     }
 
-    // 让虚影跟随鼠标
+    // 新增：开启模式
+    public void TurnOn()
+    {
+        isBuilding = true;
+        if (previewObject != null) previewObject.SetActive(true);
+
+        // 关键点：开启建造时，强制关闭冲刺模式！
+        if (dashScript != null) dashScript.TurnOff();
+
+        // 锁定角色移动 (如果你之前写了这部分)
+        // if(playerMovementScript != null) playerMovementScript.canMove = false;
+    }
+
+    // 新增：关闭模式
+    public void TurnOff()
+    {
+        isBuilding = false;
+        if (previewObject != null) previewObject.SetActive(false);
+
+        // 恢复角色移动
+        // if(playerMovementScript != null) playerMovementScript.canMove = true;
+    }
+
     void FollowMouse()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0; // 确保 Z 轴在 0，不然可能跑到摄像机后面去
+        mousePos.z = 0;
         previewObject.transform.position = mousePos;
     }
 
-    // 处理 A/D 旋转
     void HandleRotation()
     {
         float rotationAmount = 0f;
-
-        // 按 A 向左转 (逆时针)，按 D 向右转 (顺时针)
-        if (Input.GetKey(KeyCode.A))
-        {
-            rotationAmount = 1f;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            rotationAmount = -1f;
-        }
-
-        // 应用旋转: 绕 Z 轴旋转
-        // Time.deltaTime 确保旋转速度平滑，不受帧率影响
+        if (Input.GetKey(KeyCode.A)) rotationAmount = 1f;
+        else if (Input.GetKey(KeyCode.D)) rotationAmount = -1f;
         previewObject.transform.Rotate(0, 0, rotationAmount * rotateSpeed * Time.deltaTime);
     }
 
-    // 处理点击生成
     void HandleBuilding()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            // 在虚影的位置和旋转角度，生成实体 Prefab
             Instantiate(blockPrefab, previewObject.transform.position, previewObject.transform.rotation);
 
-            // 可选：生成完后是否自动退出建造模式？
-            // isBuilding = false;
-            // previewObject.SetActive(false);
+            // 解决你的第一个问题：生成完后，立即关闭自己
+            TurnOff();
         }
     }
 }

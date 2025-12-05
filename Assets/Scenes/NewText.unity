@@ -1076,6 +1076,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 934a1a95eb5e75741a3543dff2378876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blockBuilderScript: {fileID: 1585082721}
   arrowVisual: {fileID: 1141713549}
   dashForce: 15
   resetVelocityOnDash: 1
@@ -1231,6 +1232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa0438615e9f3f4baa073f36c51a2a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dashScript: {fileID: 1585082716}
   previewObject: {fileID: 858770119}
   blockPrefab: {fileID: 8411734143439565344, guid: c8db0e087daa983418c594d1cea98583, type: 3}
   rotateSpeed: 100
