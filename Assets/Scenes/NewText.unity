@@ -1057,6 +1057,7 @@ GameObject:
   - component: {fileID: 1585082717}
   - component: {fileID: 1585082716}
   - component: {fileID: 1585082721}
+  - component: {fileID: 1585082722}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1077,6 +1078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockBuilderScript: {fileID: 1585082721}
+  modifierScript: {fileID: 1585082722}
   arrowVisual: {fileID: 1141713549}
   dashForce: 15
   resetVelocityOnDash: 1
@@ -1233,9 +1235,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dashScript: {fileID: 1585082716}
+  modifierScript: {fileID: 1585082722}
   previewObject: {fileID: 858770119}
   blockPrefab: {fileID: 8411734143439565344, guid: c8db0e087daa983418c594d1cea98583, type: 3}
   rotateSpeed: 100
+--- !u!114 &1585082722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585082715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d6855390dbe23041a9af7deaf4c7e64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashScript: {fileID: 1585082716}
+  buildScript: {fileID: 1585082721}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  selectionIndicator: {fileID: 0}
 --- !u!1 &1759293801
 GameObject:
   m_ObjectHideFlags: 0
