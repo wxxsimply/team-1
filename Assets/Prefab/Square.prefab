@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5637552109875359132}
   - component: {fileID: 3413931890182655932}
   - component: {fileID: 1398539757095387009}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4711125315730172668}
   - component: {fileID: 3020687640633776118}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "\u6A21\u62DF\u7164\u6CB9\u706F\u6D4B\u8BD5"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
