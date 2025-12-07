@@ -8,7 +8,6 @@ public class ModifierTool : MonoBehaviour
     // 记得要在 Inspector 里把另外两个脚本拖进来！
     public PlayerDirectionalDash dashScript;
     public BlockBuilder buildScript;
-    public DebugDestroyer debugScript;
 
     [Header("设置")]
     public LayerMask wallLayer; // 确保你的墙体有 Layer (比如 Default 或 Ground)
@@ -42,7 +41,6 @@ public class ModifierTool : MonoBehaviour
         // 互斥逻辑：关闭其他两个功能
         if (dashScript != null) dashScript.TurnOff();
         if (buildScript != null) buildScript.TurnOff();
-        if (debugScript != null) debugScript.TurnOff();
 
         // 可以在这里显示一个鼠标图标，提示“现在是附魔模式”
     }

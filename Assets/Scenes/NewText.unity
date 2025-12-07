@@ -749,7 +749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 858770121}
   - component: {fileID: 858770120}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: "\u751F\u6210\u7684\u957F\u65B9\u5F62\u9884\u89C8"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1315,7 +1315,6 @@ GameObject:
   - component: {fileID: 1585082716}
   - component: {fileID: 1585082721}
   - component: {fileID: 1585082722}
-  - component: {fileID: 1585082723}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1337,7 +1336,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockBuilderScript: {fileID: 1585082721}
   modifierScript: {fileID: 1585082722}
-  debugScript: {fileID: 1585082723}
   arrowVisual: {fileID: 1141713549}
   dashForce: 15
   resetVelocityOnDash: 1
@@ -1495,7 +1493,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashScript: {fileID: 1585082716}
   modifierScript: {fileID: 1585082722}
-  debugScript: {fileID: 1585082723}
   previewObject: {fileID: 858770119}
   blockPrefab: {fileID: 8411734143439565344, guid: c8db0e087daa983418c594d1cea98583, type: 3}
   rotateSpeed: 100
@@ -1513,23 +1510,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashScript: {fileID: 1585082716}
   buildScript: {fileID: 1585082721}
-  debugScript: {fileID: 1585082723}
   wallLayer:
     serializedVersion: 2
     m_Bits: 128
   selectionIndicator: {fileID: 0}
-<<<<<<< Updated upstream
 --- !u!1 &1694731082
 GameObject:
-=======
---- !u!114 &1585082723
-MonoBehaviour:
->>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< Updated upstream
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1694731083}
@@ -1555,20 +1545,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 607090676}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-=======
-  m_GameObject: {fileID: 1585082715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 904d205de36d5e544944949c335a6d85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashScript: {fileID: 1585082716}
-  buildScript: {fileID: 1585082721}
-  modifierScript: {fileID: 1585082722}
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 128
->>>>>>> Stashed changes
 --- !u!1 &1759293801
 GameObject:
   m_ObjectHideFlags: 0

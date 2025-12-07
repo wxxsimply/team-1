@@ -8,7 +8,6 @@ public class PlayerDirectionalDash : MonoBehaviour
     [Tooltip("请把挂着 BlockBuilder 脚本的物体拖进来")]
     public BlockBuilder blockBuilderScript; // 新增：引用建造脚本
     public ModifierTool modifierScript;
-    public DebugDestroyer debugScript;
 
     [Header("设置")]
     public GameObject arrowVisual;
@@ -56,7 +55,6 @@ public class PlayerDirectionalDash : MonoBehaviour
     {
         isAiming = true;
         if (arrowVisual != null) arrowVisual.SetActive(true);
-        if (debugScript != null) debugScript.TurnOff();// 开启冲刺时，强制关闭删除模式
 
         // 关键点：开启冲刺时，强制关闭建造模式！
         if (blockBuilderScript != null) blockBuilderScript.TurnOff();
