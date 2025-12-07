@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5837539735531241993}
   m_Layer: 0
   m_Name: SpikeProjectile
-  m_TagString: Untagged
+  m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  lifeTime: 3
+  lifeTime: 6
 --- !u!1 &8580036949962891157
 GameObject:
   m_ObjectHideFlags: 0

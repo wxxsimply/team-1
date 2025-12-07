@@ -1037,6 +1037,132 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &958560037
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 958560040}
+  - component: {fileID: 958560039}
+  - component: {fileID: 958560038}
+  m_Layer: 0
+  m_Name: SpikeTrap (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &958560038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958560037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbd43e573ba894d42baf01b1346727ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spikePrefab: {fileID: 5095523771744226460, guid: 9b0a9199b4d9cd148bba589b81fdf076, type: 3}
+  firePoint: {fileID: 1049589811}
+  spikeSpeed: 15
+  cooldown: 1.5
+--- !u!61 &958560039
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958560037}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -3.36, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 11.87, y: 1.07}
+  m_EdgeRadius: 0
+--- !u!4 &958560040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 958560037}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.08, y: 3.87, z: -0.0015440667}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1049589811}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1049589810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1049589811}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1049589811
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049589810}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.11, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 958560040}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1141713549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1336,6 +1462,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockBuilderScript: {fileID: 1585082721}
   modifierScript: {fileID: 1585082722}
+  debugScript: {fileID: 0}
   arrowVisual: {fileID: 1141713549}
   dashForce: 15
   resetVelocityOnDash: 1
@@ -1493,6 +1620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashScript: {fileID: 1585082716}
   modifierScript: {fileID: 1585082722}
+  debugScript: {fileID: 0}
   previewObject: {fileID: 858770119}
   blockPrefab: {fileID: 8411734143439565344, guid: c8db0e087daa983418c594d1cea98583, type: 3}
   rotateSpeed: 100
@@ -1510,6 +1638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashScript: {fileID: 1585082716}
   buildScript: {fileID: 1585082721}
+  debugScript: {fileID: 0}
   wallLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -1665,6 +1794,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashScript: {fileID: 1780654908}
   buildScript: {fileID: 1780654907}
+  debugScript: {fileID: 0}
   wallLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -1683,6 +1813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashScript: {fileID: 1780654908}
   modifierScript: {fileID: 1780654906}
+  debugScript: {fileID: 0}
   previewObject: {fileID: 858770119}
   blockPrefab: {fileID: 8411734143439565344, guid: c8db0e087daa983418c594d1cea98583, type: 3}
   rotateSpeed: 100
@@ -1700,6 +1831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockBuilderScript: {fileID: 1780654907}
   modifierScript: {fileID: 1780654906}
+  debugScript: {fileID: 0}
   arrowVisual: {fileID: 1543516474}
   dashForce: 15
   resetVelocityOnDash: 1
@@ -1990,3 +2122,4 @@ SceneRoots:
   - {fileID: 1566122714}
   - {fileID: 1780654912}
   - {fileID: 607090676}
+  - {fileID: 958560040}

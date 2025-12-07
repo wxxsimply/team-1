@@ -9,44 +9,54 @@ public class Portal : MonoBehaviour
     public Transform destination;
 
     [Tooltip("防止无限循环传送的冷却时间")]
-    public float cooldownTime = 1.0f;
+    public float cooldownTime = 0.5f;
 
-    // 一个静态变量，用来记录玩家是否“刚刚传送过”
-    // static 意味着所有传送门共享这个状态
-    private static bool isTeleporting = false;
+    // 这是一个“门锁”，每个门都有自己的锁，互不影响
+    private bool isLocked = false;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // 1. 只有玩家才能触发
-        // 2. 并且当前没有在冷却时间内
-        if (other.CompareTag("Player") && !isTeleporting)
+        // 如果门被锁了，谁都别想进
+        if (isLocked) return;
+
+        // --- 核心修改：同时检测 "Player" 和 "Projectile" ---
+        if (other.CompareTag("Player") || other.CompareTag("Projectile"))
         {
             if (destination != null)
             {
-                StartCoroutine(TeleportRoutine(other.transform));
-            }
-            else
-            {
-                Debug.LogWarning("你忘了把目标传送门拖进 Destination 槽里！");
+                StartCoroutine(TeleportRoutine(other));
             }
         }
     }
 
-    IEnumerator TeleportRoutine(Transform playerTransform)
+    IEnumerator TeleportRoutine(Collider2D traveler)
     {
-        // 锁定状态：告诉所有门，现在正在传送中，不要再次触发！
-        isTeleporting = true;
+        // 1. 传送！
+        // 获取物体的 Transform
+        Transform targetTransform = traveler.transform;
 
-        // --- 可以在这里播放传送音效或特效 ---
+        // 移动位置
+        targetTransform.position = destination.position;
 
-        // 执行传送：直接修改玩家位置
-        playerTransform.position = destination.position;
+        // --- 进阶优化：通知对面的门暂时关闭 ---
+        // 这一步是为了防止你传过去瞬间，对面的门又把你传回来（死循环）
+        // 我们尝试在 destination 上找 Portal 脚本
+        Portal destPortal = destination.GetComponent<Portal>();
+        if (destPortal != null)
+        {
+            // 告诉对面的门：“有人要过来了，你先闭嘴 0.5 秒”
+            destPortal.StartCoroutine(destPortal.LockPortalTemporarily());
+        }
 
-        // 等待一段时间（冷却）
-        // 这样玩家在到达B门时，不会立刻触发B门的传送
+        // 2. 锁定自己一小会儿 (防止重复触发)
+        yield return StartCoroutine(LockPortalTemporarily());
+    }
+
+    // 一个专门用来锁门的协程
+    public IEnumerator LockPortalTemporarily()
+    {
+        isLocked = true;
         yield return new WaitForSeconds(cooldownTime);
-
-        // 解锁状态：冷却结束，允许下次传送
-        isTeleporting = false;
+        isLocked = false;
     }
 }
