@@ -9,6 +9,7 @@ public class BlockBuilder : MonoBehaviour
     public PlayerDirectionalDash dashScript; // 新增：引用冲刺脚本
     // public PlayerMovement playerMovementScript; // (保留你之前的角色移动脚本引用)
     public ModifierTool modifierScript;
+    public DebugDestroyer debugScript;
 
     [Header("设置")]
     public GameObject previewObject;
@@ -53,6 +54,7 @@ public class BlockBuilder : MonoBehaviour
         // 关键点：开启建造时，强制关闭冲刺模式！
         if (dashScript != null) dashScript.TurnOff();
         if (modifierScript != null) modifierScript.TurnOff();
+        if (debugScript != null) debugScript.TurnOff();
 
         // 锁定角色移动 (如果你之前写了这部分)
         // if(playerMovementScript != null) playerMovementScript.canMove = false;
