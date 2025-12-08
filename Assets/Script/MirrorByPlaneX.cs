@@ -1,55 +1,98 @@
 using UnityEngine;
 
-public class MirrorStaticObject : MonoBehaviour
+public class MirrorActor : MonoBehaviour
 {
-    public Transform target;  // 原角色
-    public float k = 0f;      // 镜像平面 x = k
+    public Transform target;  // 主角
+    public float k = 0f;      // 对称轴 x = k
 
-    [ContextMenu("Create Static Mirror")]
-    public void CreateMirror()
+    private Animator mirrorAnimator;
+    private Animator targetAnimator;
+    private Renderer[] renderers;
+
+    private bool isActive = false;  // 是否启用镜像
+
+    void Start()
     {
-        if (target == null)
+        targetAnimator = target.GetComponent<Animator>();
+        mirrorAnimator = GetComponent<Animator>();
+        renderers = GetComponentsInChildren<Renderer>();
+
+        // 拷贝动画控制器
+        if (targetAnimator != null && mirrorAnimator != null)
         {
-            Debug.LogError("请把 target 拖到 target 变量里！");
+            mirrorAnimator.runtimeAnimatorController = targetAnimator.runtimeAnimatorController;
+        }
+
+        // 初始化为关闭状态（隐藏）
+        SetVisible(false);
+    }
+
+    void Update()
+    {
+        // 按键 5 切换镜像开关
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            isActive = !isActive;
+            SetVisible(isActive);
+        }
+    }
+
+    void LateUpdate()
+    {
+        if (!isActive || target == null)
             return;
-        }
 
-        // -------- 1. 创建空物体 --------
-        GameObject mirror = new GameObject(target.name + "_Mirror");
-        mirror.transform.parent = target.parent;
-
-        // -------- 2. 复制 Mesh 和材质（仅外观）--------
-        MeshFilter mfTarget = target.GetComponent<MeshFilter>();
-        MeshRenderer mrTarget = target.GetComponent<MeshRenderer>();
-
-        if (mfTarget != null)
-        {
-            MeshFilter mf = mirror.AddComponent<MeshFilter>();
-            mf.sharedMesh = mfTarget.sharedMesh;
-        }
-
-        if (mrTarget != null)
-        {
-            MeshRenderer mr = mirror.AddComponent<MeshRenderer>();
-            mr.sharedMaterials = mrTarget.sharedMaterials;
-        }
-
-        // -------- 3. 位置镜像（关于 x = k）--------
+        // ========= 1. 位置镜像 =========
         Vector3 pos = target.position;
         pos.x = 2f * k - pos.x;
-        mirror.transform.position = pos;
+        transform.position = pos;
 
-        // -------- 4. 旋转镜像 --------
-        Vector3 rot = target.eulerAngles;
+        // ========= 2. 旋转镜像 =========
+        Vector3 rot = target.rotation.eulerAngles;
         rot.y = -rot.y;
         rot.z = -rot.z;
-        mirror.transform.eulerAngles = rot;
+        transform.rotation = Quaternion.Euler(rot);
 
-        // -------- 5. 缩放镜像（翻转 X）--------
+        // ========= 3. 缩放镜像 =========
         Vector3 scale = target.localScale;
         scale.x = -scale.x;
-        mirror.transform.localScale = scale;
+        transform.localScale = scale;
 
-        Debug.Log("已生成静态镜像模型（无任何移动行为）!");
+        // ========= 4. 动画同步 =========
+        if (targetAnimator != null && mirrorAnimator != null)
+        {
+            mirrorAnimator.speed = targetAnimator.speed;
+
+            for (int i = 0; i < targetAnimator.parameterCount; i++)
+            {
+                var p = targetAnimator.parameters[i];
+
+                switch (p.type)
+                {
+                    case AnimatorControllerParameterType.Float:
+                        mirrorAnimator.SetFloat(p.name, targetAnimator.GetFloat(p.name)); break;
+
+                    case AnimatorControllerParameterType.Bool:
+                        mirrorAnimator.SetBool(p.name, targetAnimator.GetBool(p.name)); break;
+
+                    case AnimatorControllerParameterType.Int:
+                        mirrorAnimator.SetInteger(p.name, targetAnimator.GetInteger(p.name)); break;
+
+                    case AnimatorControllerParameterType.Trigger:
+                        if (targetAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.1f)
+                            mirrorAnimator.SetTrigger(p.name);
+                        break;
+                }
+            }
+        }
+    }
+
+    // ---- 隐藏或显示所有 MeshRenderer ----
+    void SetVisible(bool visible)
+    {
+        foreach (var r in renderers)
+        {
+            r.enabled = visible;
+        }
     }
 }
