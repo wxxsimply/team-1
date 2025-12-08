@@ -28,18 +28,18 @@ public class PlayerDirectionalDash : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            // 如果原本是关的，就打开；原本是开的，就关闭
-            if (!isAiming)
-            {
-                TurnOn();
-            }
-            else
-            {
-                TurnOff();
-            }
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    // 如果原本是关的，就打开；原本是开的，就关闭
+        //    if (!isAiming)
+        //    {
+        //        TurnOn();
+        //    }
+        //    else
+        //    {
+        //        TurnOff();
+        //    }
+        //}
 
         if (isAiming)
         {

@@ -25,17 +25,17 @@ public class BlockBuilder : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            if (!isBuilding)
-            {
-                TurnOn();
-            }
-            else
-            {
-                TurnOff();
-            }
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    if (!isBuilding)
+        //    {
+        //        TurnOn();
+        //    }
+        //    else
+        //    {
+        //        TurnOff();
+        //    }
+        //}
 
         if (isBuilding && previewObject != null)
         {

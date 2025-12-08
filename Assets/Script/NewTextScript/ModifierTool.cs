@@ -24,11 +24,11 @@ public class ModifierTool : MonoBehaviour
     void Update()
     {
         // °´ 3 ÇÐ»»Ä£Ê½
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            if (!isModifying) TurnOn();
-            else TurnOff();
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha3))
+        //{
+        //    if (!isModifying) TurnOn();
+        //    else TurnOff();
+        //}
 
         if (isModifying)
         {
