@@ -73006,7 +73006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b20fa086baddde443b703ef9f52f317f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: higt tower
+  sceneToLoad: Teach
   interactKey: 101
   hintUI: {fileID: 0}
 --- !u!61 &7992142768593353289

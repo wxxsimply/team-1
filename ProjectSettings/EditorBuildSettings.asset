@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
     guid: d196fb9c0aea1e64284133956bdd4d71
   - enabled: 1
+    path: Assets/Scenes/forest village.unity
+    guid: da3873c9e86139849aee9fb252b3aac9
+  - enabled: 1
     path: Assets/Scenes/Teach.unity
     guid: 6305da026423f4949b96ec1650514d12
   - enabled: 1
@@ -17,9 +20,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/NewText.unity
     guid: 7371e178582c96d46b0ff5b1241b79a1
-  - enabled: 0
-    path: Assets/Scenes/forest village.unity
-    guid: da3873c9e86139849aee9fb252b3aac9
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
