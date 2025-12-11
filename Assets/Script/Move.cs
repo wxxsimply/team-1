@@ -1,7 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(Animator))]
 public class Move : MonoBehaviour
 {
     [Header("移动参数")]
@@ -35,23 +33,30 @@ public class Move : MonoBehaviour
         // 1. 地面检测
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-        // ★ 贴地后重置跳跃次数
+        // 将地面状态同步给动画控制器
+        anim.SetBool("IsGrounded", isGrounded);
+
+        // 贴地后重置跳跃次数
         if (isGrounded)
             jumpCount = 0;
 
-        // 2. 获取移动
-        horizontalInput = Input.GetAxisRaw("Horizontal");
+        // 2. 获取移动输入
+        horizontalInput = Input.GetAxis("Horizontal");
 
         anim.SetBool("IsRun", horizontalInput != 0);
 
-        // 3. 跳跃
+        // 3. 跳跃（保留三段跳机制）
         if (Input.GetButtonDown("Jump") && jumpCount < maxJumpCount)
         {
+            // 物理跳跃
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             jumpCount++;
 
-            // 如果你有跳跃动画，可以加
-            // anim.SetTrigger("Jump");
+            // ★ 添加跳跃动画触发 ★
+            anim.SetTrigger("Jump");
+
+            // 离开地面时，将地面状态设为false
+            anim.SetBool("IsGrounded", false);
         }
 
         // 4. 翻转角色
@@ -63,10 +68,11 @@ public class Move : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // 应用水平移动
         rb.velocity = new Vector2(horizontalInput * moveSpeed, rb.velocity.y);
     }
 
-    void Flip()
+    private void Flip()
     {
         isFacingRight = !isFacingRight;
         Vector3 scale = transform.localScale;
