@@ -2877,8 +2877,8 @@ TextureImporter:
         y: 582
         width: 36
         height: 26
-      alignment: 9
-      pivot: {x: 0.11111111, y: 1}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2891,54 +2891,12 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TX Village Props - Platform L 01
+      name: TX Village Props_Platform RR
       rect:
         serializedVersion: 2
-        x: 28
+        x: 101
         y: 614
-        width: 36
-        height: 26
-      alignment: 9
-      pivot: {x: 0.11111111, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dbfcd939275b0374dbec8d4ce13ad271
-      internalID: 21300220
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Village Props - Platform M 01
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 614
-        width: 32
-        height: 26
-      alignment: 1
-      pivot: {x: 0, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d9915010674bb3e4db19ae8110a2cf19
-      internalID: 21300222
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TX Village Props - Platform R 01
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 614
-        width: 36
+        width: 31
         height: 26
       alignment: 9
       pivot: {x: 0.8888889, y: 1}
@@ -3419,12 +3377,12 @@ TextureImporter:
       name: TX Village Props - Platform L 03
       rect:
         serializedVersion: 2
-        x: 28
+        x: 32
         y: 521
-        width: 36
+        width: 32
         height: 22
-      alignment: 9
-      pivot: {x: 0.11111111, y: 1}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3780,8 +3738,8 @@ TextureImporter:
         y: 550
         width: 36
         height: 26
-      alignment: 9
-      pivot: {x: 0.8888889, y: 1}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3799,10 +3757,10 @@ TextureImporter:
         serializedVersion: 2
         x: 96
         y: 521
-        width: 36
+        width: 32
         height: 22
-      alignment: 9
-      pivot: {x: 0.8888889, y: 1}
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -4591,6 +4549,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: TX Village Props_Platform L
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 614
+        width: 32
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f1274469983ae4498a49b24d03791f9
+      internalID: 30512391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TX Village Props_Platform M
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 614
+        width: 41
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1b64f59ad80aed4dbc0887736566987
+      internalID: 930764241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -4719,7 +4719,6 @@ TextureImporter:
       TX Village Props - Platform L 03: -3806943691756881100
       TX Village Props - Platform M 01: 21300222
       TX Village Props - Platform M 02: 21300216
-      TX Village Props - Platform R 01: 21300224
       TX Village Props - Platform R 02: -962671683
       TX Village Props - Platform R 03: 1368479137
       TX Village Props - Pot 01: 21300010
@@ -4792,6 +4791,9 @@ TextureImporter:
       TX Village Props - Wooden Bridge Part 04: 1792859017
       TX Village Props - Wooden Bridge Part 05: -446960186
       TX Village Props - Wooden Bridge Rope: 1919939598
+      TX Village Props_Platform L: 30512391
+      TX Village Props_Platform M: 930764241
+      TX Village Props_Platform RR: 21300224
       Tree 01: 21300120
       Tree 02: 21300226
   mipmapLimitGroupName: 
