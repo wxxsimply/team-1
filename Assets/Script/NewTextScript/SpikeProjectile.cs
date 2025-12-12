@@ -14,26 +14,44 @@ public class SpikeProjectile : MonoBehaviour
         Destroy(gameObject, lifeTime);
     }
 
-    // 当发生实体碰撞时调用
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        // 如果撞到了墙 (假设你的墙体Layer叫 "Wall" 或 "Ground")
-        // 这里我们简单判断：只要不是撞到玩家，就销毁自己
-        // (因为我们希望它撞到玩家时造成伤害，撞到墙时销毁)
-
-        if (collision.gameObject.CompareTag("Player"))
+        // ---------------------------------------------------------
+        // 【新增修复】忽略发射器自己的触发范围
+        // 如果撞到的东西也是个 Trigger (且不是玩家)，说明是空气/陷阱范围，直接无视
+        if (other.isTrigger && !other.CompareTag("Player"))
         {
-            // --- 这里写对玩家造成伤害的逻辑 ---
-            Debug.Log("玩家中刺！");
-            // 比如： collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(damage);
-
-            // 撞到人后销毁尖刺
-            Destroy(gameObject);
+            return; // 直接结束，不执行下面的销毁代码
         }
-        else
+        // ---------------------------------------------------------
+
+        // 1. 撞人逻辑 (玩家身上的 Collider 通常不是 Trigger，或者如果是也没关系，上面排除了)
+        if (other.CompareTag("Player"))
         {
-            // 撞到了墙、地面等其他障碍物
-            // 播放一个撞击音效或火花特效可以在这里加
+            // 1. 检查是不是【真身】
+            PlayerRespawn playerScript = other.GetComponent<PlayerRespawn>();
+            if (playerScript != null)
+            {
+                playerScript.Die();
+                Destroy(gameObject);
+                return;
+            }
+
+            // 2. 检查是不是【镜像】(新增逻辑)
+            MirrorLink mirrorScript = other.GetComponent<MirrorLink>();
+            if (mirrorScript != null)
+            {
+                mirrorScript.Die(); // 调用中介的死亡方法
+                Destroy(gameObject);
+                return;
+            }
+        }
+
+        // 2. 撞墙逻辑
+        else if (other.gameObject.layer == LayerMask.NameToLayer("Wall") ||
+                 other.gameObject.layer == LayerMask.NameToLayer("Ground") ||
+                 other.gameObject.layer == 0) // Default 层
+        {
             Destroy(gameObject);
         }
     }
