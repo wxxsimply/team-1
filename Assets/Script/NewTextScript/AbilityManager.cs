@@ -137,10 +137,24 @@ public class AbilityManager : MonoBehaviour
 
     void HandleAbilityInput()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1)) ActivateAbility(1);
-        else if (Input.GetKeyDown(KeyCode.Alpha2)) ActivateAbility(2);
-        else if (Input.GetKeyDown(KeyCode.Alpha3)) ActivateAbility(3);
-        else if (Input.GetKeyDown(KeyCode.Alpha0)) ActivateAbility(0);
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            ActivateAbility(1);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            ActivateAbility(2);
+        }
+        // --- 修改点：这里检测 3 键，用来激活删除 ---
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            ActivateAbility(3); // 传入索引 3
+        }
+        // 之前的弹性附魔已经移到 4 了
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            ActivateAbility(4);
+        }
     }
 
     void ActivateAbility(int index)
@@ -150,10 +164,22 @@ public class AbilityManager : MonoBehaviour
 
         switch (index)
         {
-            case 1: if (dashScript != null) dashScript.TurnOn(); break;
-            case 2: if (buildScript != null) buildScript.TurnOn(); break;
-            case 3: if (modifierScript != null) modifierScript.TurnOn(); break;
-            case 0: if (debugScript != null) debugScript.TurnOn(); break;
+            case 1:
+                if (dashScript != null) dashScript.TurnOn();
+                break;
+            case 2:
+                if (buildScript != null) buildScript.TurnOn();
+                break;
+
+            // --- 修改点：把 case 0 改成 case 3 ---
+            case 3:
+                // 现在 3 号对应的是“删除工具”(DebugDestroyer)
+                if (debugScript != null) debugScript.TurnOn();
+                break;
+
+            case 4:
+                if (modifierScript != null) modifierScript.TurnOn();
+                break;
         }
     }
 

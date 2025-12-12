@@ -5423,7 +5423,7 @@ MonoBehaviour:
   groundCheckRadius: 0.2
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
   dashScript: {fileID: 688679936}
   buildScript: {fileID: 688679935}
   modifierScript: {fileID: 688679934}
@@ -10110,7 +10110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1825628326}
   - component: {fileID: 1825628325}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: "\u751F\u6210\u7684\u957F\u65B9\u5F62\u9884\u89C8"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
