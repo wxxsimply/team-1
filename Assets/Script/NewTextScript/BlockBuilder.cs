@@ -114,4 +114,21 @@ public class BlockBuilder : MonoBehaviour
             TurnOff();
         }
     }
+
+    // ... 之前的代码 ...
+
+    // --- 新增：供外部调用的“远程销毁”方法 ---
+    public void DestroyCurrentWall()
+    {
+        if (currentWall != null)
+        {
+            Destroy(currentWall);
+            currentWall = null; // 记得把变量清空，这样你才能造下一个
+            Debug.Log("墙体已远程回收！");
+        }
+        else
+        {
+            Debug.Log("当前没有墙体可消除");
+        }
+    }
 }
