@@ -14,4 +14,4 @@
   
   shift + 4 删除一个实体
   
-  shift + 5 生成一个镜像实体。
+  shift + 5 开启一个仅存在于high tower的镜像实体。
