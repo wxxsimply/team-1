@@ -176,12 +176,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 904d205de36d5e544944949c335a6d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashScript: {fileID: 16930165}
   buildScript: {fileID: 16930164}
+  dashScript: {fileID: 16930165}
   modifierScript: {fileID: 16930163}
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!114 &16930161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2347,7 +2344,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.102781
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

@@ -4222,7 +4222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &149370057
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -4970,7 +4970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &174679470
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -8253,7 +8253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &346473267
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -9380,7 +9380,7 @@ Transform:
   m_GameObject: {fileID: 408593030}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12, y: 20, z: 0}
+  m_LocalPosition: {x: -12, y: 19.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9398,7 +9398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &408593033
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -9629,7 +9629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &420275894
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -10669,7 +10669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &468885119
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -10984,7 +10984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &486204042
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -12267,7 +12267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &585143149
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -17181,7 +17181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &715275942
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -18263,7 +18263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &788520433
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -21474,7 +21474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &889229743
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -23218,7 +23218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &965646915
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -23579,7 +23579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &975248750
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -25147,7 +25147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &1095518690
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -26976,7 +26976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &1190816867
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -27328,7 +27328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &1215748723
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -27559,7 +27559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &1219411595
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -29020,7 +29020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &1294747696
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -30530,7 +30530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &1364430365
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -31653,7 +31653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &1436786709
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -31884,7 +31884,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &1454891605
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -32115,7 +32115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &1464416736
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -33120,7 +33120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &1519783419
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -34382,7 +34382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &1576510480
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -34746,7 +34746,7 @@ GameObject:
   - component: {fileID: 1587168768}
   - component: {fileID: 1587168767}
   - component: {fileID: 1587168766}
-  - component: {fileID: 1587168765}
+  - component: {fileID: 1587168769}
   m_Layer: 0
   m_Name: trap (44)
   m_TagString: Untagged
@@ -34769,19 +34769,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 807971858}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1587168765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1587168763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
 --- !u!19719996 &1587168766
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -34965,6 +34952,19 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1587168769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587168763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {fileID: 1911712376}
 --- !u!1 &1592681045
 GameObject:
   m_ObjectHideFlags: 0
@@ -35946,7 +35946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &1627421236
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -36492,7 +36492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &1638662102
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -37774,7 +37774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &1750746920
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -39445,7 +39445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &1846417686
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -39844,7 +39844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &1865960662
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -40306,7 +40306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &1877164677
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -41253,7 +41253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &1917425917
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -41689,7 +41689,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &1928356916
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -42918,7 +42918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &1979850175
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -43988,7 +43988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &2014396889
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -45169,7 +45169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &2052577376
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -46375,7 +46375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &2068084544
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -47002,7 +47002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &2092871797
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -47818,7 +47818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d5bd9438b9865b4ea95a6e1a46be455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {fileID: 2011130605}
+  targetPosition: {fileID: 1911712376}
 --- !u!19719996 &2129706821
 TilemapCollider2D:
   m_ObjectHideFlags: 0
