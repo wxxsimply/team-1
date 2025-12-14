@@ -5,39 +5,40 @@ using UnityEngine.SceneManagement; // 如果你想重置整个关卡，需要这个
 
 public class PlayerRespawn : MonoBehaviour
 {
-    private Vector3 spawnPoint; // 记录出生点坐标
+    private Vector3 spawnPoint;       // 玩家复活坐标
+    private Vector3 cameraSpawnPoint; // 新增：摄像机复活坐标
     private Rigidbody2D rb;
 
     void Start()
     {
-        // 1. 游戏刚开始时，记住现在站在哪里
         spawnPoint = transform.position;
+        // 默认摄像机位置就是当前摄像机的位置
+        cameraSpawnPoint = Camera.main.transform.position;
 
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // --- 供外界调用的死亡方法 ---
     public void Die()
     {
-        Debug.Log("玩家死亡，正在重生...");
+        Debug.Log("玩家死亡，回溯！");
 
-        // 方法 A：直接把玩家瞬移回出生点 (推荐，速度快)
+        // 1. 玩家归位
         transform.position = spawnPoint;
+        if (rb != null) rb.velocity = Vector2.zero;
 
-        // 重要：重生时要把速度归零！
-        // 否则如果你是冲刺撞死的，重生后还会继续带着速度飞出去
-        if (rb != null)
+        // 2. 新增：摄像机归位
+        // 找到摄像机脚本，强行把镜头切过去
+        CameraController cam = Camera.main.GetComponent<CameraController>();
+        if (cam != null)
         {
-            rb.velocity = Vector2.zero;
+            cam.MoveToNewRoom(cameraSpawnPoint);
         }
-
-        // 方法 B：重载当前场景 (如果你希望墙壁、怪物的状态也全部重置)
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    // (进阶) 如果你有存档点，可以用这个方法更新出生点
-    public void SetNewSpawnPoint(Vector3 newPos)
+    // 修改这个方法，接收两个参数
+    public void SetNewSpawnPoint(Vector3 newPlayerPos, Vector3 newCameraPos)
     {
-        spawnPoint = newPos;
+        spawnPoint = newPlayerPos;
+        cameraSpawnPoint = newCameraPos; // 记住这个存档点对应的镜头位置
     }
 }

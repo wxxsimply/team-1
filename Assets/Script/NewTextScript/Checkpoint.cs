@@ -5,8 +5,10 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
     [Header("设置")]
-    [Tooltip("被激活后变成什么颜色？(例如绿色)")]
     public Color activeColor = Color.green;
+
+    [Tooltip("【关键】请把当前房间的 CameraPoint 拖进来！")]
+    public Transform roomCameraTarget; // 新增：这个存档点属于哪个房间镜头？
 
     private bool isActivated = false;
     private SpriteRenderer sr;
@@ -18,21 +20,22 @@ public class Checkpoint : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // 如果已经被激活过，就不用再处理了
         if (isActivated) return;
 
         if (other.CompareTag("Player"))
         {
-            // 1. 找到玩家身上的复活脚本
             PlayerRespawn respawnScript = other.GetComponent<PlayerRespawn>();
 
-            if (respawnScript != null)
+            if (respawnScript != null && roomCameraTarget != null)
             {
-                // 2. 更新复活点坐标为当前旗帜的位置
-                respawnScript.SetNewSpawnPoint(transform.position);
+                // 修改：同时传入玩家位置 和 摄像机目标位置
+                respawnScript.SetNewSpawnPoint(transform.position, roomCameraTarget.position);
 
-                // 3. 标记为已激活
                 ActivateCheckpoint();
+            }
+            else
+            {
+                Debug.LogWarning("存档点报错：你是不是忘了拖 CameraTarget？");
             }
         }
     }
@@ -40,14 +43,6 @@ public class Checkpoint : MonoBehaviour
     void ActivateCheckpoint()
     {
         isActivated = true;
-        Debug.Log("存档点已激活！");
-
-        // 视觉反馈：变色
-        if (sr != null)
-        {
-            sr.color = activeColor;
-        }
-
-        // (进阶) 这里可以播放音效或动画
+        if (sr != null) sr.color = activeColor;
     }
 }
