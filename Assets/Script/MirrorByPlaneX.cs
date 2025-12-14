@@ -18,30 +18,33 @@ public class MirrorActor : MonoBehaviour
 
     private float ghostTimer = 0f;
 
-    private bool isActive = false;
+    // 1. 修改变量初始值：默认为 true (开启)
+    private bool isActive = true;
 
     void Start()
     {
         targetAnimator = target.GetComponent<Animator>();
         mirrorAnimator = GetComponent<Animator>();
-
-        // 【修改：改为 SpriteRenderer 而不是 Renderer】
         spriteRenderers = GetComponentsInChildren<SpriteRenderer>();
 
         if (targetAnimator != null && mirrorAnimator != null)
             mirrorAnimator.runtimeAnimatorController = targetAnimator.runtimeAnimatorController;
 
-        SetVisible(false);
+        // 2. 修改 Start 方法：游戏开始时直接设为可见 (true)
+        SetVisible(true);
     }
 
     void Update()
     {
-        // 支持键盘上排5 和 小键盘5
-        if (Input.GetKeyDown(KeyCode.Alpha5) || Input.GetKeyDown(KeyCode.Keypad5))
+        // 3. 删除或注释掉 Update 里的按键检测代码
+        // 这样玩家按下 5 键就不会有任何反应，也就无法关闭镜像了
+
+        /* if (Input.GetKeyDown(KeyCode.Alpha5) || Input.GetKeyDown(KeyCode.Keypad5))
         {
             isActive = !isActive;
             SetVisible(isActive);
         }
+        */
     }
 
     void LateUpdate()
