@@ -18,6 +18,16 @@ public class PlayerRespawn : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    // --- 新增：每一帧检测按键 ---
+    void Update()
+    {
+        // 如果按下了 R 键 (Restart)
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Die(); // 直接调用现有的死亡方法
+        }
+    }
+
     public void Die()
     {
         Debug.Log("玩家死亡，回溯！");

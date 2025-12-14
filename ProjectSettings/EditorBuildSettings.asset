@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/higt tower.unity
     guid: d15177186d244224f8eb1d2ea53ebf0b
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: a85458ef19a7bbf4d85ca49b06823bd6
   - enabled: 0
     path: Assets/Scenes/NewText.unity
     guid: 7371e178582c96d46b0ff5b1241b79a1

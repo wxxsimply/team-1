@@ -19,4 +19,10 @@ public class MainMenu : MonoBehaviour
         Debug.Log("游戏已退出！"); // 在编辑器里看不到退出，所以打印一句话证明好使
         Application.Quit();
     }
+
+    // 新增：点击“制作团队”时调用
+    public void OpenCredits()
+    {
+        SceneManager.LoadScene("Credits"); // 这里的名字要和你第一步创建的场景名一样
+    }
 }
