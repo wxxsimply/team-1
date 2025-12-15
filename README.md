@@ -15,3 +15,7 @@
   shift + 4 删除一个实体
   
   shift + 5 显示/隐藏一个仅存在于high tower的镜像实体。
+
+
+https://github.com/user-attachments/assets/9c9d9487-8ba7-4fc5-a357-757d03ed67ab
+
